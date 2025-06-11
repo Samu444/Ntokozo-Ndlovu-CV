@@ -8,7 +8,7 @@
 /* Body with transparent background effect */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark gradient background */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -45,7 +45,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Logo / Name */
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
@@ -101,7 +100,6 @@ body {
   cursor: pointer;
 }
 
-/* Responsive Stacking */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -153,110 +151,4 @@ body {
 
 .social-links a:hover {
   color: #ffffff;
-}
-
-/* Responsive Footer */
-@media (max-width: 600px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-.about-section {
-  background: rgba(255, 255, 255, 0.05); /* glass effect */
-  backdrop-filter: blur(8px);
-  padding: 32px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-  color: #f0f0f0;
-  margin-top: 32px;
-}
-
-.about-section h1 {
-  font-size: 32px;
-  margin-bottom: 24px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.about-section p {
-  font-size: 16px;
-  line-height: 28px;
-  margin-bottom: 16px;
-  color: #e0e0e0;
-}
-
-.about-section .quote {
-  margin: 32px 0;
-  font-style: italic;
-  color: #ddd;
-  text-align: center;
-  font-size: 17px;
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
-  padding-left: 16px;
-  line-height: 26px;
-}
-
-.skills-section {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  padding: 32px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-  color: #f0f0f0;
-  margin-top: 32px;
-}
-
-.skills-section h1 {
-  font-size: 32px;
-  margin-bottom: 24px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.skills-category {
-  margin-bottom: 32px;
-}
-
-.skills-category h2 {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #e0e0e0;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 8px;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-}
-
-.skills-list li {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 16px;
-  color: #e0e0e0;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: default;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.skills-list li:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-
-.skills-list li i {
-  font-size: 20px;
 }
