@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<section class="weather-section">
+  <h2>Current Weather</h2>
+  <p id="location">Detecting location...</p>
+  <p id="weather">Fetching weather...</p>
+</section>
+
   <header class="site-header">
     <div class="container header-container">
       <h1 class="logo">Ntokozo Ndlovu</h1>
@@ -61,6 +67,41 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  const apiKey = 'b35924cbaeebdb544868e232c2f8de85';
+
+  function getWeather(lat, lon) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('location').textContent = `Location: ${data.name}`;
+        document.getElementById('weather').textContent = `Temperature: ${data.main.temp}°C | Weather: ${data.weather[0].description}`;
+      })
+      .catch(() => {
+        document.getElementById('weather').textContent = 'Unable to fetch weather.';
+      });
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const { latitude, longitude } = position.coords;
+        getWeather(latitude, longitude);
+      },
+      error => {
+        document.getElementById('location').textContent = 'Location access denied.';
+        document.getElementById('weather').textContent = '';
+      }
+    );
+  } else {
+    document.getElementById('location').textContent = 'Geolocation not supported.';
+    document.getElementById('weather').textContent = '';
+  }
+</script>
+
 
 </body>
 </html>
